@@ -1,40 +1,131 @@
-# jammer
-A Bash script to automate the continuous circular deauthentication of all the wifi networks in your reach
+<html>
+  <head>
+    <title>SpeechJammer+ App</title>
+    <link href="./css/speechJammerPlus.css" rel="stylesheet">
+    <link href="./assets/css/bootstrap-responsive.css" rel="stylesheet">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="./assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="./assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="./assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-57-precomposed.png">
+    <link rel="shortcut icon" href="./assets/ico/favicon.png">
+    <link href="./assets/css/bootstrap.css" rel="stylesheet">
+  </head>
+  <body>
 
-## I am not responsible for any misuses of the script 
-Keep in mind that it is generally illegal to use the script at your neihborhood
+    <div class="container">
+      <br>
+      <br>
+      <br>
+      <br>
+      <!-- Jumbotron -->
+      <div class="jumbotron">
+        <h1>SpeechJammer+</h1>
+        <h2>Disturb your talk? No, it is FUN!!</h2>
+        <p class="lead">The basic idea of this application is SpeechJammer, which won Ig Novel Acoustics Prize in 2012. And, now SpeechJammer gets video playback and sound effect feature.<br> I believe "SpeechJammer+" is not only an application to disturb people from talking, but also provide you some fun experiences!!</p>
+        <a class="btn btn-large btn-success" href="#appArea">Try SpeechJammer+ !!</a>
+      </div>
+      <br>
+      <br>
+      <br>
+      <br>
 
-It is designed for pen-testing purposes
+      <hr>
 
-It has only been tested on my two machines, so there may still be bugs that can even cause data loss
+      <a id="appArea"></a>
+      <div class="masthead">
+        <h3 class="muted tShadow">SpeechJammer+</h3>
+      </div>
+      <br>
 
-### That's why I suggest you take a good look at the code before you execute it
+						<div id="right">
+        <div id="social_button">
+          <div id="tw-root">
+            <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://goo.gl/yCJvX" data-text="HAVE FUN!! &quot;SpeechJammer+&quot; Web App -" data-hashtags="webaudio">Tweet</a>
+            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+          </div>
+          <div id="gl-root">
+            <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+            <g:plusone size="medium"></g:plusone>
+          </div>
+          <div id="hb-root">
+            <a id="hb_like" href="http://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-layout="standard" title="このエントリーをはてなブックマークに追加">
+              <img src="http://b.st-hatena.com/images/entry-button/button-only.gif" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" />
+            </a>
+            <script type="text/javascript" src="http://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+            <script type="text/javascript">document.getElementById("hb_like").href="http://b.hatena.ne.jp/entry/"+location.href</script>
+          </div>
+          <div id="fb-root1">
+            <iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fdl.dropboxusercontent.com%2Fu%2F695740%2FspeechJammerPlus%2Findex.html&amp;send=false&amp;layout=button_count&amp;width=100&amp;show_faces=true&amp;font=arial&amp;colorscheme=light&amp;action=like&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:100px; height:21px;" allowTransparency="true"></iframe>
+          </div>
+          <div id="tw-root" style="padding-left:30px;">
+            <a href="https://twitter.com/ryoyakawai" class="twitter-follow-button" data-show-count="false">Follow @ryoyakawai</a>
+            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+          </div>
+        </div>
+      </div>
+      <br>
+      <br>
 
-There will be updates as soon as I fix something or make a nice improvement
+      <div class="jamArea" id="jamArea">
+        <div class="div_labelEffect">
+          <i class="icon-fire"></i><strong>Sound Effect: </strong><br>
+          <div class="div_changeEffect"><span id="changeEffect" class="changeEffect"></span></div>
+        </div>
+        <div class="labelDelay">
+          <div><webaudio-knob id="delayKnob" class="delayKnob" src="images/knob/knob_64_white1.png" value="200" min="0" max="1000" step="10" diameter="64" splites="29"></webaudio-knob></div>
+          <div><i class="icon-plus-sign"></i><strong>Delay : </strong><span id="delayText"></span></div>
+        </div>
+        <div class="labelVolume">
+          <div><webaudio-knob id="volumeKnob" class="volumeKnob" src="images/knob/LittlePhatty.png" value="7" min="0" max="10" step="0.25" diameter="64" splites="100"></webaudio-knob></div>
+          <div><i class="icon-signal"></i><strong>Volume : </strong><span id="volumeText"></span></div>
+        </div>
+        <br style="clear:both;"">
 
-Not that anyone will see this
+        <hr>
 
-```
-Jammer v0.5
+        <div class="captureImageArea">
+
+          <div id="div_delayImage" ><img id="delayImage" class="flipImage"></div>
+          <br>
+
+          <canvas id="analyserCanvas"></canvas>
+        </div>
+
+        <video id="videoStream"></video>
+        <div id="div_videoCanvas"><canvas id="videoCanvas"></canvas></div>
+
+        <hr class="appUiHr">
+        <div class="jamButton">
+          <input class="btn btn-primary" type="button" id="toggleStartButton" name="on" value="Jamming On">
+        </div>
+        <br>
+
+      </div><!-- /.appArea -->
+
+      <a href="https://github.com/ryoyakawai/speechJammerPlus/" target="_new" class="header" style="position: absolute; z-index:2; top: 0; right: 0; border: 0;"><img src="images/forkme.png" alt="Fork me on GitHub"></a>
+
+    </div><!-- /.container -->
 
 
-Usage: jammer [OPTION] ... 
-Jam Wifi Networks That Your Wireless Card Can Reach.
 
- -d, --deauths: Set the number of deauthentications for each station. Default is 10
- -y, --yes: Make 'Yes' the answer for everything the script asks
- -s, --endless: When reaching the end of the list, start again
- -f, --whitelist: A file with ESSID's to ignore during the attack
- -k, --keep: Keep the scan files after the script ends
- -n, --name: Choose the names the scan files are saved as
- -e, --ethernet: Set the name for the ethernet interface. Default is 'eth0'
- -w, --wireless: Set the name for the wireless interface. Default is 'wlan0'
- --spoof-mac: Try to change MACs using macchanger
- -h, --help: Show this help message
- ```
- Looking at this help message a suggested way to call the script is
- ```
- $ sudo ./jammer -y -s -d 20 -f whitelist.txt
- ```
- 
- 
+    <script type="text/javascript" src="js/waveshaper.js"></script>
+    <script type="text/javascript" src="js/speechJammer.js"></script>
+    <script type="text/javascript" src="js/ctrlSpeechJammer.js"></script>
+
+    <script src="polymer/polymer.min.js"></script>
+    <link rel="import" href="webcomponents/knob.html">
+
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-31901806-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+    </script>
+
+  </body>
+</html>
